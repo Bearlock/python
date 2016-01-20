@@ -7,10 +7,10 @@ from email.mime.text 	  import MIMEText
 from email.MIMEImage 	  import MIMEImage
 
 # We start as usual, retrieving a file with urllib
-openSite = urllib.urlretrieve("https://docs.google.com/spreadsheets/d/1ePmQ_yWo1hpDZ9yHH9IXlMPS4Lf9Y1y-wEQt0ZuLjAg/export?format=csv&id", "/home/erick/public_html/supply.csv")
+openSite = urllib.urlretrieve("https://docs.google.com/spreadsheets/d/1ePmQ_yWo1hpDZ9yHH9IXlMPS4Lf9Y1y-wEQt0ZuLjAg/export?format=csv&id", "/home/erick/supply.csv")
 
-me 		  	 = "supplies@nes.com"
-you 	  	 = "1erickdiaz@gmail.com"
+me           = "supplies@somecompany"
+you          = "employee@somecompany.com"
 emptyVals 	 = ['0', 'None', 'none', 'out', 'zero', 'Zero']
 resupplyList = list()
 commentsList = list()
@@ -29,7 +29,7 @@ commentsString = '<br />'.join( comment for comment in commentsList)
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "Supply report"
 msg['From']    = me
-msg['To'] 	   = you
+msg['To']      = you
 
 text = "Hi!\nHow are you?\nHere is the supply list you wanted:\n\n" + resupplyString
 html = """\
